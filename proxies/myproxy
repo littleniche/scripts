@@ -30,9 +30,3 @@ then	echo "turning proxy on...."
 	sudo sed -i 's/#//g' "$wget_proxy_path" "$apt_proxy_path"
 fi
 
-
-
-
-
-
-
