@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+# ---------------------------------------------- THIS NEEDS TO BE CHECKED STILL -----------------------------------------------
+
+>>>>>>> 419cd3d7f1da74d2c7d53eac91e3c26c2ae529ab
 #!/bin/bash
 
 echo "-------------------------------------------------------------"
@@ -10,7 +15,7 @@ echo "Enter the IP address for your proxy server : "
 read proxy
 echo "Enter the port number : "
 read port
-echo "Enter the username : "
+echo "Enter the username (your MIS) : "
 read username
 echo "Enter the password : "
 read password
