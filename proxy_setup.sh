@@ -1,4 +1,4 @@
-	#!/bin/bash
+#!/bin/bash
 
 echo "-------------------------------------------------------------"
 echo "Welcome to the proxy setup program!"
@@ -36,8 +36,8 @@ Let's begin...
 
 echo "Setting up global proxy in ../test/ \n"
 
-touch ../test/proxy.sh       
-path_to_global_proxy="../test/proxy.sh"     # change path to /etc/profile.d/proxy.sh
+touch /etc/profile.d/proxy.sh       
+path_to_global_proxy="/etc/profile.d/proxy.sh"    
 
 cat <<EOF > $path_to_global_proxy
 # set proxy config via profile.d - should apply for all users
@@ -60,21 +60,21 @@ EOF
 echo "The proxy file created needs to be sourced. Do you wish to continue? (y/n)"
 read choice
 if [ $choice = 'y' ]; then 
-	# sudo source $path_to_global_proxy
-	echo "Check the proxy variable has been setup properly or not from the below displayed environment variables."
-	echo $(env | grep -i proxy)
+	source $path_to_global_proxy
+	echo "To check that the varibales have been added to the environment, open a new terminal instance and enter type the command : "
+	echo "env | grep -i proxy"
 elif [ $choice = 'n' ]; then
 	sudo rm $path_to_global_proxy
-	echo "exiting..."
+	echo "\nexiting..."
 	exit 0
 fi
 
 
 echo "\n\nCompleted step 2. Initializing step 3.\n"
 
-touch ../test/proxy80       
+touch /etc/apt/apt.conf.d/80proxy       
 
-apt_proxy="../test/proxy80"	# change path to /etc/apt/apt.conf.d/80proxy
+apt_proxy="/etc/apt/apt.conf.d/80proxy"	
 
 cat <<EOF > $apt_proxy
 Acquire::http::proxy "http://$username:$password@$proxy:$port/";
@@ -84,9 +84,9 @@ EOF
 
 echo "\nCompleted step 3. Initializing the final step."
 
-touch /home/$USER/.testrc
+touch /home/$USER/.wgetrc
 
-wget_proxy="/home/$USER/.testrc"
+wget_proxy="/home/$USER/.wgetrc"
 
 cat <<EOF > $wget_proxy
 use_proxy = on
