@@ -1,4 +1,4 @@
-#!/bin/bash
+	#!/bin/bash
 
 echo "-------------------------------------------------------------"
 echo "Welcome to the proxy setup program!"
@@ -34,10 +34,9 @@ The steps 2, 3 and 4 have been automated using this interactive script written i
 Let's begin...
 "
 
-
 echo "Setting up global proxy in ../test/ \n"
 
-touch ../test/proxyfile       
+touch ../test/proxy.sh       
 path_to_global_proxy="../test/proxy.sh"     # change path to /etc/profile.d/proxy.sh
 
 cat <<EOF > $path_to_global_proxy
@@ -85,7 +84,11 @@ EOF
 
 echo "\nCompleted step 3. Initializing the final step."
 
-cat <<EOF > ~/.testrc
+touch /home/$USER/.testrc
+
+wget_proxy="/home/$USER/.testrc"
+
+cat <<EOF > $wget_proxy
 use_proxy = on
 http_proxy = http://$username:$password@$proxy:$port/
 https_proxy = http://$username:$password@$proxy:$port/

@@ -7,16 +7,14 @@ if [ "$#" -ne 1 ] ; then
 	exit 3
 fi
 
-get_pwd=$(pwd)
-cd ~
-if [ -f ~/.wgetrc ]; then
-	wget_proxy_path=".wgetrc"
+
+if [ -f /home/$USER/.wgetrc ]; then
+	wget_proxy_path="/home/$USER/.wgetrc"
 fi
 
 if [ -f /etc/apt/apt.conf.d/80proxy ]; then
 	apt_proxy_path="/etc/apt/apt.conf.d/80proxy"
-fi
-
+fi 
 
 # for adding comments and turning global proxy OFF
 if [ $1 = 'off' ];
@@ -29,7 +27,7 @@ fi
 if [ $1 = "on" ];
 then	echo "turning proxy on...."
 	gsettings set org.gnome.system.proxy mode manual
-	sudo sed -i 's/#//' "$wget_proxy_path" "$apt_proxy_path"
+	sudo sed -i 's/#//g' "$wget_proxy_path" "$apt_proxy_path"
 fi
 
 
