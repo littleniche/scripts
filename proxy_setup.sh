@@ -1,4 +1,6 @@
-	#!/bin/bash
+# ---------------------------------------------- THIS NEEDS TO BE CHECKED STILL -----------------------------------------------
+
+#!/bin/bash
 
 echo "-------------------------------------------------------------"
 echo "Welcome to the proxy setup program!"
@@ -10,7 +12,7 @@ echo "Enter the IP address for your proxy server : "
 read proxy
 echo "Enter the port number : "
 read port
-echo "Enter the username : "
+echo "Enter the username (your MIS) : "
 read username
 echo "Enter the password : "
 read password
