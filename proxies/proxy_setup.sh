@@ -92,7 +92,8 @@ EOF
 echo "
 Completed step 3. Initializing the final step."
 
-sudo touch ~/.wgetrc       
+sudo touch ~/wgetrc     
+sudo mv ~/wgetrc ~/.wgetrc  
 
 wget_proxy="~/.wgetrc"	
 sudo touch ./tocopy
