@@ -70,4 +70,13 @@ sudo apt install wget
 # sudo apt-get install mysql-server
 # sudo snap install mysql-workbench-community
 
-
+#sync timedate between windows and debian
+# Remove ntp package first by using
+sudo apt purge ntp
+sudo apt install systemd-timesyncd
+#startup the timesyncd service
+sudo systemctl start systemd-timesyncd
+#check status 
+sudo systemctl status systemd-timesyncd
+# check date and time
+timedatectl
