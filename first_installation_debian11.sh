@@ -80,3 +80,8 @@ sudo systemctl start systemd-timesyncd
 sudo systemctl status systemd-timesyncd
 # check date and time
 timedatectl
+
+# if you are facing time-sync issues between windows and linux, try this command
+timedatectl set-local-rtc 1
+# check current time with
+timedatectl
