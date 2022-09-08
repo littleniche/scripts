@@ -68,8 +68,13 @@ EOF
 
 echo "The proxy file created needs to be sourced. Do you wish to continue? (y/n)"
 read choice
+<<<<<<< HEAD
 if [ $choice = "y" ]; then 
 	#source $path_to_global_proxy
+=======
+if [ $choice = 'y' ]; then 
+	source $path_to_global_proxy
+>>>>>>> 6d81ccd98506a5991debca208cb8698843560c5b
 	echo "To check if the proxy variables have been initialized, enter the following command on the terminal : "
 	echo "env | grep -i proxy"
 elif [ $choice = "n" ]; then
