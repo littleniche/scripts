@@ -5,6 +5,8 @@ echo "Welcome to the proxy setup program!"
 echo "-------------------------------------------------------------"
 echo ""
 
+PCUSER = "$(whoami)"
+
 echo "Initializing proxy setup process..."
 echo "Enter the IP address for your proxy server : "
 read proxy
@@ -66,13 +68,13 @@ EOF
 
 echo "The proxy file created needs to be sourced. Do you wish to continue? (y/n)"
 read choice
-if [ $choice = 'y' ]; then 
+if [ $choice = "y" ]; then 
 	#source $path_to_global_proxy
 	echo "To check if the proxy variables have been initialized, enter the following command on the terminal : "
 	echo "env | grep -i proxy"
-elif [ $choice = 'n' ]; then
+elif [ $choice = "n" ]; then
 	sudo rm $path_to_global_proxy
-	echo "\\n exiting..."
+	printf "\\n exiting..."
 	exit 0
 fi
 
@@ -92,10 +94,10 @@ EOF
 echo "
 Completed step 3. Initializing the final step."
 
-sudo touch ~/.wgetrc       
+touch /home/$PCUSER/.wgetrc       
 
-wget_proxy="~/.wgetrc"	
-sudo touch ./tocopy
+wget_proxy="/home/$PCUSER/.wgetrc"	
+touch ./tocopy
 
 cat <<EOF > $wget_proxy
 use_proxy = on
@@ -112,7 +114,7 @@ ftp_proxy = http://$username:$password@$proxy:$port/
 EOF
 
 
-if [ ! -f "~/.wgetrc" ]; then
+if [ ! -f "/home/$PCUSER/.wgetrc" ]; then
 	echo "Cannot create .wgetrc file in the home directory
 	"
 	echo "Please follow the following instructions to setup wget proxy
