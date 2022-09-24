@@ -61,6 +61,15 @@ myproxy on
 To turn off proxy :
 myproxy off
 ```
+<hr />
 
-
+### HOW TO UNINSTALL
+Download the script at the following link and run the command
+```
+https://github.com/akshaykhoje/my_linux_scripts/blob/master/proxies/uninstall.sh
+```
+Run the script to uninstall:
+```
+sudo ./uninstall.sh
+```
 ##### Have a nice day! ☕🌞
