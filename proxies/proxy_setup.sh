@@ -5,7 +5,7 @@ echo "Welcome to the proxy setup program!"
 echo "-------------------------------------------------------------"
 echo ""
 
-PCUSER = "$(whoami)"
+PCUSER="$(whoami)"
 
 echo "Initializing proxy setup process..."
 echo "Enter the IP address for your proxy server : "
@@ -48,6 +48,22 @@ echo "Setting up global proxy in /etc/profile.d/proxy.sh"
 touch /etc/profile.d/proxy.sh       
 path_to_global_proxy="/etc/profile.d/proxy.sh"    
 
+# to unset variables
+unset_vars="/etc/profile.d/unset_proxy.sh"
+sudo touch /etc/profile.d/unset_proxy.sh
+cat <<EOF > $unset_vars
+#!/bin/bash
+
+unset no_proxy
+unset ftp_proxy
+unset https_proxy
+unset NO_PROXY
+unset FTP_PROXY
+unset HTTPS_PROXY
+unset HTTP_PROXY
+unset http_proxy
+EOF
+
 cat <<EOF > $path_to_global_proxy
 # set proxy config via profile.d - should apply for all users
 # For http/https/ftp/no_proxy
@@ -68,9 +84,9 @@ EOF
 
 echo "The proxy file created needs to be sourced. Do you wish to continue? (y/n)"
 read choice
-<<<<<<< HEAD
-if [ $choice = "y" ]; then 
-	#source $path_to_global_proxy
+
+#if [ $choice = "y" ]; then 
+#	source $path_to_global_proxy
 
 if [ $choice = 'y' ]; then 
 	source $path_to_global_proxy
@@ -99,7 +115,7 @@ EOF
 echo "
 Completed step 3. Initializing the final step."
 
-touch /home/$PCUSER/.wgetrc       
+sudo touch /home/$PCUSER/.wgetrc       
 
 wget_proxy="/home/$PCUSER/.wgetrc"	
 touch ./tocopy
@@ -110,6 +126,7 @@ http_proxy = http://$username:$password@$proxy:$port/
 https_proxy = http://$username:$password@$proxy:$port/
 ftp_proxy = http://$username:$password@$proxy:$port/
 EOF
+
 
 cat <<EOF > ./tocopy
 use_proxy = on
@@ -157,4 +174,3 @@ echo "
 Thank you!"
 
 exit 0
-
