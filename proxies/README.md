@@ -26,6 +26,9 @@ sudo chmod +x proxy_setup.sh
 ```
 sudo ./proxy_setup.sh
 ```
+```
+source /etc/profile.d/proxy.sh
+```
 Enter credentials to the script and it'll be done in a minute.
 
 ### IMPROVEMENTS
@@ -57,9 +60,12 @@ sudo mv ./myproxy /usr/local/bin/
 ```
 To turn on proxy : 
 myproxy on
-
+source /etc/profile.d/proxy.sh
+```
+```
 To turn off proxy :
 myproxy off
+source /etc/profile.d/unset_proxy.sh
 ```
 <hr />
 
