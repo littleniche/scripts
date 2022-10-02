@@ -23,9 +23,9 @@
 # now you can use the sudo command
 
 
-# sudo apt update
-# sudo apt install torbrowser-launcher vlc qbittorrent
-# sudo apt install git
+sudo apt update
+sudo apt install torbrowser-launcher vlc qbittorrent
+sudo apt install git
 
 # installing firewall GUI
 sudo apt install gufw
