@@ -153,7 +153,7 @@ fi
 echo "--------------------------------------------------------------------------------------"
 
 echo "
-Since you are behind a proxy server, you cannot use the ping command. So you have to install httping to ensure that your proxy server is running."
+Since you are behind a proxy server, you cannot use the ping command. You have to install httping to ensure that your proxy server is running."
 
 echo "
 Install httping using \"sudo apt install httping\"."
