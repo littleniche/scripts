@@ -115,11 +115,9 @@ EOF
 echo "
 Completed step 3. Initializing the final step."
 
-sudo touch /home/$PCUSER/.wgetrc       
-
-wget_proxy="/home/$PCUSER/.wgetrc"	
-touch ./tocopy
-
+touch /home/"$PCUSER"/.wgetrc
+wget_proxy="/home/"$PCUSER"/.wgetrc"
+     
 cat <<EOF > $wget_proxy
 use_proxy = on
 http_proxy = http://$username:$password@$proxy:$port/
@@ -127,27 +125,7 @@ https_proxy = http://$username:$password@$proxy:$port/
 ftp_proxy = http://$username:$password@$proxy:$port/
 EOF
 
-
-cat <<EOF > ./tocopy
-use_proxy = on
-http_proxy = http://$username:$password@$proxy:$port/
-https_proxy = http://$username:$password@$proxy:$port/
-ftp_proxy = http://$username:$password@$proxy:$port/
-EOF
-
-
-if [ ! -f "/home/$PCUSER/.wgetrc" ]; then
-	echo "Cannot create .wgetrc file in the home directory
-	"
-	echo "Please follow the following instructions to setup wget proxy
-	"
-	echo "cd ~"
-	echo "sudo touch .wgetrc"
-	echo "copy paste the contents of tocopy file created in the proxies folder to ~/.wgetrc folder manually"
-	echo "Delete the tocopy file after copying by typing sudo rm tocopy inside the proxies folder"
-else
-	echo "Completed the final step"
-fi
+echo "Completed the final step"
 
 
 echo "--------------------------------------------------------------------------------------"
