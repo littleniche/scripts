@@ -27,10 +27,8 @@ sudo dnf install snapd
 sudo ln -s /var/lib/snapd/snap /snap
 
 
-#Enable rpm fusion repo
+#Enable RPM-fusion repo
 sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-
 
 
 # Add RPM-fusion non-free repository
@@ -49,6 +47,7 @@ sudo wget https://flathub.org/repo/flathub.flatpakrepo
 # flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 
+
 #### System changes(1) ------
 echo "Ensure that timezone is set correctly in fedora!!"
 # If timezone is not set correctly , uncomment the following command and replace <Continent/City> with your corresponding info
@@ -65,13 +64,12 @@ sudo dnf install git-all
 
 
 # If you are running a GNOME Environment uncomment the following code to install GNOME-tweaks
-sudo dnf install gnome-tweaks
+# sudo dnf install gnome-tweaks
 
 
 
 #### Text editors/IDE(3) ------
-#Install vscode
-sudo ln -s /var/lib/snapd/snap /snap
+# Install vscode
 sudo snap install code --classic
 
 # Install vim editor
@@ -82,8 +80,9 @@ sudo dnf install vim-enhanced
 sudo snap install micro --classic
 
 
+
 #### Video players(1) ------
-#Install vlc
+# Install vlc
 sudo dnf install vlc
 
 
@@ -97,7 +96,7 @@ sudo dnf install google-chrome-stable
 
 
 #### Newtork commands(1) ------
-#Install wget
+# Install wget
 sudo dnf install wget
 
 
@@ -114,7 +113,7 @@ sudo dnf install wget
 
 #### Image Editing(1) ------ (Uncomment to use)
 # Install  Gnu Image Manipulation Pragram (GIMP)
-sudo dnf install gimp
+# sudo dnf install gimp
 
 
 
