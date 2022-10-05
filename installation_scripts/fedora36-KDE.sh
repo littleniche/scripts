@@ -24,6 +24,7 @@ sudo dnf upgrade
 #### Package repositories(4) ------
 #Install snap
 sudo dnf install snapd
+sudo ln -s /var/lib/snapd/snap /snap
 
 
 #Enable rpm fusion repo
