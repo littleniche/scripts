@@ -4,6 +4,10 @@
 
 sudo apt-get update && sudo apt-get upgrade -y
 
+# Install a prettier and feature rich alternative to apt
+sudo apt install nala
+cat apt-to-nala >> ~/.bashrc
+
 # If you're unable to play media codecs, uncomment the following lines
 sudo apt install ubuntu-restricted-extras
 
