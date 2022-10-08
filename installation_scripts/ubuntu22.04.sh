@@ -15,7 +15,7 @@ sudo apt install ubuntu-restricted-extras
 
 # For extra customization and extensions
 sudo add-apt-repository universe
-sudo apt install gnome-tweak-tool
+sudo apt install gnome-tweaks
 
 # Install firewall
 sudo apt-get install gufw
