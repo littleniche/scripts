@@ -43,10 +43,9 @@ sudo apt install gstreamer1.0-alsa
 # installing snap
 sudo apt install snapd
 sudo snap install core
-#check if snapd is running successfully without any error
-sudo systemctl status snapd
-#if yes, use this command to start snapd, IF AT ALL it doesn't start by itself
-sudo systemctl start snapd
+
+# Enable and start snap daemon
+sudo systemctl enable --now snapd
 
 
 #install vscode from snap store

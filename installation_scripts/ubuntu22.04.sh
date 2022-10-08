@@ -31,10 +31,11 @@ sudo apt install wireshark
 # Install snapd and snap
 sudo apt install snapd
 sudo snap install core
-# check if snapd is running successfully without any error
-sudo systemctl status snapd
-# In case it does not start, uncomment the following command to start it.
-sudo systemctl start snapd
+
+# Enable and start snapd
+sudo systemctl enable --now snapd
+
+#Install snap-store
 sudo snap install snap-store
 
 # Install vscode
