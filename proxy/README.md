@@ -17,7 +17,7 @@ Please manually setup the proxy in the Settings -> Network -> Network Proxy -> M
 Download the 'proxies' folder located at https://github.com/akshaykhoje/my_linux_scripts/tree/master/
 ```
 ```
-cd proxies
+cd proxy
 ```
 I recommend reading the scripts and see what it's doing.
 ```
@@ -49,7 +49,7 @@ Thus I thought of restricting this minute-ful of work to a one-line terminal com
 
 ### HOW TO USE
 ```
-cd proxies
+cd proxy
 ```
 ```
 sudo chmod +x myproxy
@@ -72,7 +72,7 @@ source /etc/profile.d/unset_proxy.sh
 ### HOW TO UNINSTALL
 Download the script at the following link and run the command
 ```
-https://github.com/akshaykhoje/my_linux_scripts/blob/master/proxies/uninstall.sh
+https://github.com/akshaykhoje/my_linux_scripts/blob/master/proxy/uninstall.sh
 ```
 Run the script to uninstall:
 ```
