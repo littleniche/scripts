@@ -8,6 +8,9 @@ sudo apt-get update && sudo apt-get upgrade -y
 sudo apt install nala
 cat apt-to-nala >> ~/.bashrc
 
+#Install a multiple terminal alternative: Terminator for simple terminal
+sudo apt install terminator
+
 # If you're unable to play media codecs, uncomment the following lines
 sudo apt install ubuntu-restricted-extras
 
