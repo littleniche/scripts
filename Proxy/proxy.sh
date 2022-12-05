@@ -34,11 +34,6 @@ toggleProxyOFF()
 }
 
 
-# if [ "$#" -ne 1 ];
-# then
-	# echo "$0: exactly 1 argument is expected!"
-	# exit 3
-# fi
 
 case $1 in
 	"on")
@@ -49,15 +44,3 @@ case $1 in
 		;;
 esac
 
-# if [ $1="on" ];
-# then
-	# toggleProxyON
-	# exit 0
-# fi
-# 
-# if [ $1="off" ];
-# then
-	# toggleProxyOFF
-	# exit 0
-# fi
-# 

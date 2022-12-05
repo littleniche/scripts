@@ -41,7 +41,6 @@ userInfo()
 	read -p "Enter the username : " username
 	read -p "Enter the password : " password
 
-	echo "$proxyServer $port $username $password"
 }
 
 

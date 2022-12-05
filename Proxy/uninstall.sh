@@ -8,5 +8,5 @@ sudo rm /etc/wgetrc
 
 # to uninstall system-wide proxy
 sudo rm /etc/profile.d/proxy.sh
-
+sudo rm /usr/local/bin/proxy
 
