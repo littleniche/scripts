@@ -20,7 +20,7 @@ cd Proxy
 
 - Make all the scripts executable
 ```
-sudo chmod +x ./*
+sudo chmod +x ./*.sh
 ```
 
 - Run the proxy2.sh script with sudo privileges
