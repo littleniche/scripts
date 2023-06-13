@@ -5,7 +5,7 @@ echo "Beginning the installation process..."
 file="/usr/local/bin/proxy"
 
 if [ $# == 0 ];
-then 
+then
 	if [ -f "file" ];
 	then
 		sudo rm $file
@@ -16,7 +16,7 @@ then
 	sudo cp ./proxy.sh $file
 
 	if [ -f $file ];
-	then 
+	then
 		echo "Successfully installed proxy."
 	fi
 fi

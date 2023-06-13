@@ -8,7 +8,7 @@ apt_proxy="/etc/apt/apt.conf.d/80proxy"
 toggleProxyON()
 {	
 	echo "Turning proxy ON"
-	#gsettings set org.gnome.system.proxy mode manual
+	gsettings set org.gnome.system.proxy mode manual
 	sudo sed -i 's/#//g' "$global_proxy" "$wget_proxy" "$apt_proxy"
 	. $global_proxy
 	exit 0
@@ -23,7 +23,7 @@ toggleProxyOFF()
 	fi
 	
 	echo "Turning proxy OFF"
-	#gsettings set org.gnome.system.proxy mode manual
+	gsettings set org.gnome.system.proxy mode none
 	sudo sed -i 's/^/#/' "$global_proxy" "$wget_proxy" "$apt_proxy"
 	
 	#if [ -f /etc/profile.d/unset_proxy.sh ]; then
@@ -34,7 +34,6 @@ toggleProxyOFF()
 }
 
 
-
 case $1 in
 	"on")
 		toggleProxyON
@@ -43,4 +42,3 @@ case $1 in
 		toggleProxyOFF
 		;;
 esac
-

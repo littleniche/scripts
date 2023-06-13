@@ -9,24 +9,23 @@ greeting()
 {
 	echo "------------------------------------------------------------------------------"
 	echo "			  PROXY INSTALLATION PROGRAM!!!			     "
-	echo -e "------------------------------------------------------------------------------\n"
-	
+	echo -e "------------------------------------------------------------------------------\n"	
 }
 
 
 createFiles()
 {
-	if [ ! -f /etc/profile.d/proxy.sh ];
+	if [ ! -f $global_proxy ];
 	then
 		touch /etc/profile.d/proxy.sh
 	fi
 	
-	if [ ! -f /etc/apt/apt.conf.d/80proxy ]; 
+	if [ ! -f $wget_proxy ]; 
 	then
 		touch /etc/apt/apt.conf.d/80proxy
 	fi
 
-	if [ ! -f ~/.wgetrc ];
+	if [ ! -f $apt_proxy ];
 	then
 		touch /etc/wgetrc
 	fi
@@ -40,7 +39,6 @@ userInfo()
 	read -p "Enter the port number : " port
 	read -p "Enter the username : " username
 	read -p "Enter the password : " password
-
 }
 
 
@@ -51,7 +49,6 @@ export http_proxy="http://$username:$password@$proxy_server:$port/"
 export https_proxy="http://$username:$password@$proxy_server:$port/"
 export ftp_proxy="http://$username:$password@$proxy_server:$port/"
 export no_proxy="127.0.0.1,localhost"
-
 
 export HTTP_PROXY="http://$username:$password@$proxy_server:$port/"
 export HTTPS_PROXY="http://$username:$password@$prox_server:$port/"
@@ -82,14 +79,9 @@ EOF
 }
 
 
-
-
-
-
 greeting
 createFiles
 userInfo
 globeAndCurl
 wgetRC
 aptProxy
-
