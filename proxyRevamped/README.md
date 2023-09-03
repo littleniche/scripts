@@ -22,7 +22,7 @@ cd proxyRevamped
 sudo python3 proxy.py --install
 ```
 
-## Unisntallation
+## Uninstallation
 
 ```
 4. sudo python3 proxy.py --uninstall
