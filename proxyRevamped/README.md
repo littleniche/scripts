@@ -25,7 +25,7 @@ sudo python3 proxy.py --install
 ## Uninstallation
 
 ```
-4. sudo python3 proxy.py --uninstall
+sudo python3 proxy.py --uninstall
 ```
 
 ## To see the changes in effect:

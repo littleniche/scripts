@@ -1,0 +1,31 @@
+#!/usr/bin/env sh
+
+echo "Initializing the proxy setup..."
+
+file_path="/etc/environment"
+
+if [ ! -e "$file_path" ]; then
+    echo "The configuration file '$file_path' does not exist."
+    exit 1
+fi
+
+# Function to enable proxy
+enable_proxy() {
+    sed -i 's/^#*//g' "$file_path"
+    echo "Proxy is now enabled."
+}
+
+# Function to disable proxy
+disable_proxy() {
+    sed -i 's/^#*/#/g' "$file_path"
+    echo "Proxy is now disabled."
+}
+
+if [ "$1" = "on" ]; then
+    enable_proxy
+elif [ "$1" = "off" ]; then
+    disable_proxy
+else
+    echo "Usage: $0 [on|off]"
+    exit 1
+fi
