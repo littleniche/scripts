@@ -34,6 +34,11 @@ sudo python3 proxy.py --uninstall
     - Setup your proxy from the Network menu.
     - Go to Network Proxy menu and turn it to **`Manual`**
     ![alt text](./network.png)
+    - To toggle ON the proxy from any directory, enter the following in terminal:
+        ```
+        proxy on
+        ```
+
     - Installation of snap applications may require additional commands. They are as follows:
         ```
         sudo snap set system proxy.http=$http_proxy
@@ -43,9 +48,15 @@ sudo python3 proxy.py --uninstall
 
 - Turning OFF the proxy:
     - Go to Network Proxy menu and turn it to **`Disabled`**
+    - To toggle OFF the proxy from any directory, enter the following in terminal:
+        ```
+        proxy off
+        ```
     - To unset the snap proxy, use the following commands:
         ```
         sudo snap unset system proxy.http
         sudo snap unset system proxy.https
         ```
     > Open a new terminal instance.
+
+`Seamlessly use the fast LAN connection via your playground - the commandline.`
