@@ -7,18 +7,25 @@ The main aim of this enhanced python script is to overcome the limitations on th
 A single file is created at the path `/etc/environment`.
 It contains the proxy information and is system-wide for the user.
 
-## Additional changes that may be needed
+## Installation
 
-Installation of snap applications may require additional commands. They are as follows:
+1. Clone the repository
 ```
-sudo snap set system proxy.http=$http_proxy
-sudo snap set system proxy.https=$http_proxy
+git clone git@github.com:littleniche/scripts.git
+```
+2. Change directory to proxyRevamped
+```
+cd proxyRevamped
+```
+3. Run the command to install
+```
+sudo python3 proxy.py --install
 ```
 
-To unset the snap proxy, use the following commands:
+## Unisntallation
+
 ```
-sudo snap unset system proxy.http
-sudo snap unset system proxy.https
+4. sudo python3 proxy.py --uninstall
 ```
 
 ## To see the changes in effect:
