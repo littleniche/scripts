@@ -36,7 +36,7 @@ sudo python3 proxy.py --uninstall
     ![alt text](./network.png)
     - To toggle ON the proxy from any directory, enter the following in terminal:
         ```
-        proxy on
+        sudo proxy on
         ```
 
     - Installation of snap applications may require additional commands. They are as follows:
@@ -50,7 +50,7 @@ sudo python3 proxy.py --uninstall
     - Go to Network Proxy menu and turn it to **`Disabled`**
     - To toggle OFF the proxy from any directory, enter the following in terminal:
         ```
-        proxy off
+        sudo proxy off
         ```
     - To unset the snap proxy, use the following commands:
         ```
