@@ -6,8 +6,8 @@ def snap():
     """Use the following commands to make snap available behind proxy"""
     print("-"*50)
     print("To setup the snap proxy, run the following commands in terminal:")
-    print('sudo snap set system proxy.http=$http_proxy"')
-    print('sudo snap set system proxy.https=$http_proxy"')
+    print('sudo snap set system proxy.http=$http_proxy')
+    print('sudo snap set system proxy.https=$http_proxy')
 
     print("-"*50)
     print("\nTo unset the snap proxy, run the following commands in terminal:")
